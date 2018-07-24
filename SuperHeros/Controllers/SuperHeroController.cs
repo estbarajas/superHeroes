@@ -9,7 +9,11 @@ namespace SuperHeros.Controllers
     public class SuperHeroController : Controller
     {
         // GET: SuperHero
-        public ActionResult Index()
+        //public ActionResult Index()
+        //{
+        //    return View();
+        //}
+        public ActionResult Create()
         {
             return View();
         }
