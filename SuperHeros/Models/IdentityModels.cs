@@ -31,5 +31,7 @@ namespace SuperHeros.Models
         }
 
         DbSet<SuperHero> SuperHeroe { get; set; }
+
+        public System.Data.Entity.DbSet<SuperHeros.Models.SuperHero> SuperHeroes { get; set; }
     }
 }
