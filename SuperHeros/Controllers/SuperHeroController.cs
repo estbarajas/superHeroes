@@ -57,5 +57,22 @@ namespace SuperHeros.Controllers
             }
             return View(superHero);
         }
+        public ActionResult Delete(int? id)
+        {
+            
+            SuperHero superHero = db.SuperHeroe.Find(id);
+            
+            return View(superHero);
+        }
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult Delete(int id)
+        {
+
+            SuperHero superHero = db.SuperHeroe.Find(id);
+            db.SuperHeroe.Remove(superHero);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
