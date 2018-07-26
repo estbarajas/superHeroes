@@ -20,6 +20,7 @@ namespace SuperHeros.Controllers
         }
         public ActionResult Create()
         {
+            //ViewBag.superHeroId = new SelectList(db.SuperHeroe, "Id", "Name");
             return View();
         }
         [HttpPost]
@@ -30,8 +31,7 @@ namespace SuperHeros.Controllers
             {
                 db.SuperHeroe.Add(superHero);
                 db.SaveChanges();
-                RedirectToAction("Index");
-
+                return RedirectToAction("Index");
             }
             return View();
         }
